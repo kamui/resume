@@ -1,0 +1,16 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Generates Jack Chu's resume PDF and LinkedIn copy from a single source",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "build": "node src/build.ts",
+    "check": "node src/build.ts --check",
+    "html": "node src/build.ts --no-pdf",
+    "preview": "node tools/preview.ts"
+  }
+}
