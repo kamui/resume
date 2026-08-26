@@ -47,7 +47,7 @@ tools/preview.ts        live preview server
 dist/                   BUILD OUTPUT. Gitignored. Never edit.
 ├── jack-chu-resume.html
 ├── linkedin-copy.md            paste into LinkedIn from here
-└── Jack Chu Resume - Formatted.pdf     the file you send
+└── jack-chu-resume.pdf          the file you send
 ```
 
 Editing Away means opening `src/content/away.ts` and nothing else.

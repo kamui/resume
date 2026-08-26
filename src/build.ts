@@ -24,7 +24,7 @@ const DIST = join(ROOT, "dist");
 
 const HTML_OUT = join(DIST, "jack-chu-resume.html");
 const MD_OUT = join(DIST, "linkedin-copy.md");
-const PDF_OUT = join(DIST, "Jack Chu Resume - Formatted.pdf");
+const PDF_OUT = join(DIST, "jack-chu-resume.pdf");
 
 const CHROME =
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
