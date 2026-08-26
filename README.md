@@ -183,7 +183,7 @@ Headcount, budget and scope carry the seniority story without the revenue risk.
 
 | Role | Dates | Scope | Budget |
 |---|---|---|---|
-| Fête, CTO | Nov 2025 - May 2026 | Team of 5 | none |
+| Fête, CTO | Nov 2025 - May 2026 | Team of 6 | none |
 | Legacy, VP Technology | Jan 2024 - Jun 2025 | 4 in-house engineers and a consultant | $2M+ |
 | Modern Age, CTO | Sep 2021 - Dec 2022 | Zero to 21, including 4 consultants | $5M+ |
 | Away, VP Engineering | Oct 2018 - Mar 2021 | Inherited 3 consultants plus ecomm/project/product mgmt, built past 30 | $9M+ |
@@ -211,18 +211,17 @@ account 66200 Web Design & Development $615K, so $4.005M non-comp. Do not use
 the 2021 figures: ecommerce and product management had moved to a VP of Product
 and a team was laid off during COVID. Represent peak scope, not the final year.
 
+The Away org was fluid across the period and reached at least 30 people at peak,
+including consultants. "Built it past 30" describes that peak, which is the
+right thing for a resume to state, and is what the $9M+ figure rests on.
+
 ---
 
 ## Open questions
 
-1. **Fête says "Team of 5" then lists six people**: Head of Product, lead Product
-   Designer, offshore PM, 3 offshore engineers. One of the two is wrong.
-2. **Away peak headcount is recalled, not documented.** It carries $5.4M of the
-   $9M+ claim, which holds down to roughly 28 people. Worth pinning from an
-   FY2019 or original FY2020 budget.
-3. **Away account 67300 is claimed in full.** If part sat in another cost centre
+1. **Away account 67300 is claimed in full.** If part sat in another cost centre
    the figure drops, though it still clears $8M even at 60% ownership.
-4. **The 1.28x load factor is a convention.** Every budget figure moves with it.
+2. **The 1.28x load factor is a convention.** Every budget figure moves with it.
 
 ---
 

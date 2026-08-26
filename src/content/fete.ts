@@ -19,10 +19,10 @@ export const fete: Job = {
         resumeMode: "full",
         scope: [
           "Reported to the CEO, later the President · Executive leadership team",
-          "**Team of 5**: Head of Product, lead Product Designer, offshore PM, 3 offshore engineers",
+          "**Team of 6**: in-house VP of Product, consultant design lead, offshore product/project manager, 3 offshore engineers",
         ],
         note: "Role ended when the company pivoted from building custom product to an off-the-shelf e-commerce platform",
-        linkedinIntro: "Reported to the CEO, later the President. On the executive leadership team. Team of 5: a Head of Product, a lead Product Designer, an offshore PM, and 3 offshore engineers.",
+        linkedinIntro: "Reported to the CEO, later the President. On the executive leadership team. Team of 6: an in-house VP of Product, a product design lead on contract, an offshore product and project manager, and 3 offshore engineers.",
         linkedinNotes: [
           "The role ended when the company pivoted away from building a custom digital product and moved to an off-the-shelf e-commerce platform.",
         ],
@@ -40,7 +40,7 @@ export const fete: Job = {
             linkedin: "Set technology architecture requirements and roadmaps across three different business models as the company moved from B2B gifting to B2C gifting to a tech-forward e-commerce magazine",
           },
           {
-            linkedin: "Hired the team: a Head of Product, a lead Product Designer, and a small group of offshore engineers to build the various product directions",
+            linkedin: "Hired the team: a VP of Product, a product design lead on contract, and a small group of offshore engineers to build the various product directions",
           },
           {
             resume: "Hired the product, design, and engineering group. Sourced a Manhattan MSP to take over the IT setup I'd stood up, and trained an associate to run the day-to-day",
