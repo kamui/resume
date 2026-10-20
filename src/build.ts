@@ -5,8 +5,8 @@
  *   node src/build.ts --check    validate only, write nothing
  *   node src/build.ts --no-pdf   write dist/ but skip Chrome
  *
- * The PDF must come out at EXPECTED_PAGES. A resume that quietly grows to four
- * pages is the failure this is here to catch, so it exits non-zero.
+ * The PDF must come out at EXPECTED_PAGES. A resume that quietly grows a page
+ * is the failure this is here to catch, so it exits non-zero.
  */
 
 import { execFileSync } from "node:child_process";
@@ -82,7 +82,7 @@ function findChrome(): string {
   );
 }
 
-export const EXPECTED_PAGES = 3;
+export const EXPECTED_PAGES = 2;
 
 /** Page count straight from the PDF's page tree. */
 function pdfPageCount(path: string): number {

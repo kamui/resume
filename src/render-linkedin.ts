@@ -51,7 +51,7 @@ export function renderLinkedin(r: Resume): string {
     `# LinkedIn copy — ${r.name}`,
     "",
     "Paste-ready text for every LinkedIn field. Not page-limited; this restores the",
-    "detail that was cut from the 3-page resume PDF.",
+    "detail that was cut from the 2-page resume PDF.",
     "",
     "Generated from `src/content.ts`. Edit the content, not this file.",
     "",

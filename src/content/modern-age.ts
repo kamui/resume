@@ -21,11 +21,15 @@ export const modernAge: Job = {
           "Reported to the CEO · Leadership team",
           "**Built Product, Engineering, Design and IT from zero to 21**, including 4 consultants · **$5M+ budget across comp, software and services**",
         ],
+        note: "Left to care for a family member through a serious illness",
         linkedinIntro: "Longevity and aging wellness business with NYC clinics, 30+ people. Reported to the CEO and sat on the leadership team. Built Product, Engineering, Design and IT from zero to 21 people, including 4 consultants, on a $5M+ annual budget across comp, software and services.",
+        linkedinNotes: [
+          "I left to care for a family member through a serious illness.",
+        ],
         bullets: [
           {
-            resume: "Joined pre-launch and launched the brand in six months. We didn't finalize what we were building until month three, so the whole thing was executed in the back half",
-            linkedin: "Joined pre-launch and launched the brand in six months. We did not finalize what we were going to build until month three, so the whole thing was executed in the back half",
+            resume: "Joined pre-launch and launched in six months, with scope settled only in month three. By November: 1,600+ customers and 2,500+ bookings, with customers doubling over the prior nine weeks",
+            linkedin: "Joined pre-launch and launched the brand in six months. We did not finalize what we were going to build until month three, so the whole thing was executed in the back half. By November 2022 we had 1,600+ customers and 2,500+ bookings, with customers doubling over the previous nine weeks",
             resumeOrder: 0,
           },
           {
@@ -35,7 +39,7 @@ export const modernAge: Job = {
             linkedin: "Scaled Product, Engineering, Design and IT/Security from the ground up, establishing team structures, hiring processes and cross-functional workflows to support rapid growth",
           },
           {
-            resume: "Designed and built the platform end to end: consumer site, backend APIs, third-party integrations, analytics pipelines, and OTC/Rx purchase and fulfillment",
+            resume: "Designed and built the platform end to end: consumer site, APIs, third-party integrations, analytics, OTC/Rx fulfillment",
             linkedin: "Designed and implemented the end-to-end technical infrastructure: consumer-facing website, backend APIs, third-party integrations, data analytics pipelines, and OTC/Rx purchase and fulfillment systems",
             resumeOrder: 1,
           },
@@ -45,17 +49,14 @@ export const modernAge: Job = {
             resumeOrder: 3,
           },
           {
-            resume: "Launched the Subjective Age Assessment (an AI questionnaire that gave you your subjective age against your biological age, and what to do to close the gap) and the Aging Wellness Assessment (clinical labs plus a breakdown of skin, hair, metabolic, and bone health as it pertains to aging)",
+            resume: "Launched the two flagship products: an AI questionnaire comparing your subjective and biological age, and the Aging Wellness Assessment, clinical labs plus a skin, hair, metabolic and bone health breakdown",
             linkedin: "Launched the flagship patient assessment products. The Subjective Age Assessment was an AI-based questionnaire that gave you your subjective age against your biological age, plus recommendations to lower it. The Aging Wellness Assessment included clinical labs and a detailed breakdown of your skin, hair, metabolic and bone health as it pertains to aging",
             resumeOrder: 2,
           },
           {
-            resume: "Worked with Studio Operations on the in-clinic technology: iPads, digital displays, multimedia, and check-in/check-out for two NYC clinics",
+            resume: "Built the in-clinic technology with Studio Operations: iPads, displays, and check-in/check-out for two NYC clinics",
             linkedin: "Partnered with Studio Operations to architect the in-clinic technology ecosystem, including iPads, digital displays and multimedia systems, creating modern patient experiences that bridged digital and physical touchpoints, and handling check-in and check-out for two physical clinics in NYC",
             resumeOrder: 4,
-          },
-          {
-            linkedin: "Built the foundational technology supporting studio operations, clinician workflows and marketing automation, from concept through production deployment",
           },
         ],
       },
