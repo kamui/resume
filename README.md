@@ -20,6 +20,10 @@ npm run html       # write dist/ but skip Chrome
 
 No dependencies. Node 23.6+ runs the TypeScript directly.
 
+Pushing a content change to `main` builds the PDF on a macOS runner and
+publishes it as a GitHub release tagged `resume-<hash>`. A push that leaves the
+hash unchanged publishes nothing.
+
 ---
 
 ## Layout

@@ -1,0 +1,50 @@
+name: Release PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "package.json"
+      - ".github/workflows/release-pdf.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-pdf
+  cancel-in-progress: false
+
+jobs:
+  release:
+    # style.css asks for Charter and Helvetica Neue, which ship with macOS.
+    # Linux runners fall back to DejaVu and render a different-looking resume.
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - run: node src/build.ts
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pdf=$(ls dist/jack-chu_resume-*.pdf)
+          hash=$(basename "$pdf" .pdf)
+          hash=${hash##*-}
+          tag="resume-$hash"
+
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists; content unchanged."
+            exit 0
+          fi
+
+          gh release create "$tag" "$pdf" \
+            --target "$GITHUB_SHA" \
+            --title "Resume $hash" \
+            --notes "Built from $GITHUB_SHA."
