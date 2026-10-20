@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - "pages/**"
       - "package.json"
       - ".github/workflows/release-pdf.yml"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:

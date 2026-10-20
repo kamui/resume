@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Current resume PDF</title>
+</head>
+<body>
+  <p id="status">Opening the current resume PDF…</p>
+  <noscript>JavaScript is required to find the current resume PDF.</noscript>
+  <script type="module">
+    const status = document.querySelector("#status");
+
+    try {
+      const routeUrl = new URL(window.location.href);
+      if (!routeUrl.pathname.endsWith("/")) routeUrl.pathname += "/";
+
+      const manifestUrl = new URL("../current-pdf.json", routeUrl);
+      manifestUrl.searchParams.set("v", Date.now().toString());
+
+      const response = await fetch(manifestUrl, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Manifest request failed: ${response.status}`);
+
+      const { filename } = await response.json();
+      if (!/^jack-chu_resume-[0-9a-f]{8}\.pdf$/.test(filename)) {
+        throw new Error("Manifest contained an invalid PDF filename");
+      }
+
+      window.location.replace(new URL(`../${filename}`, routeUrl));
+    } catch {
+      status.textContent = "The current resume PDF could not be loaded. Please try again.";
+    }
+  </script>
+</body>
+</html>

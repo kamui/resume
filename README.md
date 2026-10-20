@@ -20,9 +20,11 @@ npm run html       # write dist/ but skip Chrome
 
 No dependencies. Node 23.6+ runs the TypeScript directly.
 
-Pushing a content change to `main` builds the PDF on a macOS runner and
-publishes it as a GitHub release tagged `resume-<hash>`. A push that leaves the
-hash unchanged publishes nothing.
+Pushing a content change to `main` builds and publishes the hash-named PDF as a
+GitHub release. After that succeeds, a second workflow builds the same commit
+and deploys its HTML and current PDF to GitHub Pages. The `/pdf/` route resolves
+the current hashed filename through a cache-busted manifest, and each Pages
+deployment contains only the current `jack-chu_resume-<hash>.pdf`.
 
 ---
 

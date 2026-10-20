@@ -1,0 +1,74 @@
+name: Deploy resume to Pages
+
+on:
+  workflow_run:
+    workflows: ["Release PDF"]
+    types: [completed]
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - run: node src/build.ts --no-pdf
+
+      - name: Download released PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          hash=$(sha256sum dist/jack-chu-resume.html | cut -c1-8)
+          pdf_name="jack-chu_resume-$hash.pdf"
+          gh release download "resume-$hash" --pattern "$pdf_name" --dir dist
+
+      - name: Stage site
+        shell: bash
+        run: |
+          shopt -s nullglob
+          pdfs=(dist/jack-chu_resume-*.pdf)
+          if (( ${#pdfs[@]} != 1 )); then
+            echo "Expected exactly one current PDF, found ${#pdfs[@]}." >&2
+            exit 1
+          fi
+
+          pdf_name=$(basename "${pdfs[0]}")
+          mkdir -p _site/pdf
+          cp dist/jack-chu-resume.html _site/index.html
+          cp "${pdfs[0]}" _site/
+          cp pages/pdf/index.html _site/pdf/index.html
+          printf '{"filename":"%s"}\n' "$pdf_name" > _site/current-pdf.json
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v6
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
