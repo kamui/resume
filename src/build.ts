@@ -10,7 +10,15 @@
  */
 
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { fileURLToPath } from "node:url";
 import { delimiter, dirname, isAbsolute, join } from "node:path";
 
@@ -24,7 +32,26 @@ const DIST = join(ROOT, "dist");
 
 const HTML_OUT = join(DIST, "jack-chu-resume.html");
 const MD_OUT = join(DIST, "linkedin-copy.md");
-const PDF_OUT = join(DIST, "jack-chu-resume.pdf");
+const PDF_PREFIX = "jack-chu_resume-";
+
+/**
+ * Hashes the HTML rather than the PDF: Chrome stamps a creation date into
+ * every PDF, so only the HTML (CSS inlined) gives the same name for the same
+ * resume.
+ */
+function pdfPathFor(html: string): string {
+  const hash = createHash("sha256").update(html).digest("hex").slice(0, 8);
+  return join(DIST, `${PDF_PREFIX}${hash}.pdf`);
+}
+
+function removeStalePdfs(keep: string): void {
+  for (const name of readdirSync(DIST)) {
+    const path = join(DIST, name);
+    if (name.startsWith(PDF_PREFIX) && name.endsWith(".pdf") && path !== keep) {
+      rmSync(path);
+    }
+  }
+}
 
 const CHROME_CANDIDATES: Partial<Record<NodeJS.Platform, string[]>> = {
   darwin: ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"],
@@ -56,7 +83,6 @@ function findChrome(): string {
 }
 
 export const EXPECTED_PAGES = 3;
-export const PATHS = { dist: DIST, html: HTML_OUT, md: MD_OUT, pdf: PDF_OUT };
 
 /** Page count straight from the PDF's page tree. */
 function pdfPageCount(path: string): number {
@@ -85,6 +111,7 @@ function renderPdf(htmlPath: string, pdfPath: string): void {
 export type BuildResult = {
   ok: boolean;
   problems: ReturnType<typeof validate>;
+  pdf?: string;
   pages?: number;
   error?: string;
 };
@@ -104,12 +131,15 @@ export async function runBuild(
 
   try {
     mkdirSync(DIST, { recursive: true });
-    writeFileSync(HTML_OUT, renderHtml(resume), "utf8");
+    const html = renderHtml(resume);
+    writeFileSync(HTML_OUT, html, "utf8");
     writeFileSync(MD_OUT, renderLinkedin(resume), "utf8");
     if (opts.pdf === false) return { ok: true, problems };
 
-    renderPdf(HTML_OUT, PDF_OUT);
-    return { ok: true, problems, pages: pdfPageCount(PDF_OUT) };
+    const pdf = pdfPathFor(html);
+    renderPdf(HTML_OUT, pdf);
+    removeStalePdfs(pdf);
+    return { ok: true, problems, pdf, pages: pdfPageCount(pdf) };
   } catch (e) {
     return { ok: false, problems, error: (e as Error).message };
   }
@@ -137,7 +167,7 @@ async function main(): Promise<void> {
   console.log(`  wrote ${rel(MD_OUT)}`);
   if (skipPdf) return;
 
-  console.log(`  wrote ${rel(PDF_OUT)} (${result.pages} pages)`);
+  console.log(`  wrote ${rel(result.pdf!)} (${result.pages} pages)`);
   if (result.pages !== EXPECTED_PAGES) {
     console.error(
       `\nERROR: expected ${EXPECTED_PAGES} pages, got ${result.pages}. ` +

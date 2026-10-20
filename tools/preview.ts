@@ -20,7 +20,7 @@ import { execFile } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-import { runBuild, PATHS, EXPECTED_PAGES } from "../src/build.ts";
+import { runBuild, EXPECTED_PAGES } from "../src/build.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "src");
@@ -30,6 +30,7 @@ const portArg = args.indexOf("--port");
 const PORT = portArg >= 0 ? Number(args[portArg + 1]) : 4321;
 
 let version = 0;
+let pdfPath: string | undefined;
 let status = { ok: true, pages: 0, messages: [] as string[] };
 const clients = new Set<ServerResponse>();
 
@@ -42,6 +43,7 @@ async function rebuild(reason: string): Promise<void> {
   const started = Date.now();
   const result = await runBuild();
   version++;
+  if (result.pdf) pdfPath = result.pdf;
 
   if (result.error) {
     status = { ok: false, pages: 0, messages: [result.error] };
@@ -153,7 +155,8 @@ const server = createServer((req, res) => {
 
   if (url === "/resume.pdf") {
     try {
-      const pdf = readFileSync(PATHS.pdf);
+      if (!pdfPath) throw new Error("not built yet");
+      const pdf = readFileSync(pdfPath);
       res.writeHead(200, {
         "Content-Type": "application/pdf",
         "Cache-Control": "no-store",
