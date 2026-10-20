@@ -34,7 +34,8 @@ jobs:
         run: |
           hash=$(sha256sum dist/jack-chu-resume.html | cut -c1-8)
           pdf_name="jack-chu_resume-$hash.pdf"
-          gh release download "resume-$hash" --pattern "$pdf_name" --dir dist
+          tag=$(git ls-remote --tags --refs origin "resume-*-$hash" | sed 's#.*refs/tags/##')
+          gh release download "$tag" --pattern "$pdf_name" --dir dist
 
       - name: Stage site
         shell: bash

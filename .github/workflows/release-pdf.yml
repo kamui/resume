@@ -41,17 +41,22 @@ jobs:
           pdf=$(ls dist/jack-chu_resume-*.pdf)
           hash=$(basename "$pdf" .pdf)
           hash=${hash##*-}
-          tag="resume-$hash"
 
-          if gh release view "$tag" >/dev/null 2>&1; then
-            echo "Release $tag already exists; content unchanged."
+          existing=$(git tag -l "resume-*-$hash")
+          if [ -n "$existing" ]; then
+            echo "Release $existing already exists; content unchanged."
             exit 0
           fi
+
+          # GitHub lists releases by tag name, so the commit time leads the tag.
+          stamp=$(TZ=UTC git log -1 --format=%cd --date=format-local:%Y%m%d-%H%M%S HEAD)
+          title_time=$(TZ=UTC git log -1 --format=%cd --date=format-local:'%Y-%m-%d %H:%M' HEAD)
+          tag="resume-$stamp-$hash"
 
           prev=$(git describe --tags --abbrev=0 --match 'resume-*' HEAD 2>/dev/null || true)
           git log --no-merges --format='- %s (%h)%n%w(0,2,2)%b' "${prev:+$prev..}HEAD" > notes.md
 
           gh release create "$tag" "$pdf" \
             --target "$GITHUB_SHA" \
-            --title "Resume $hash" \
+            --title "Resume $title_time UTC ($hash)" \
             --notes-file notes.md
