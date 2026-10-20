@@ -10,9 +10,9 @@
  */
 
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { delimiter, dirname, isAbsolute, join } from "node:path";
 
 import { resume } from "./content/index.ts";
 import { renderHtml } from "./render-html.ts";
@@ -26,8 +26,35 @@ const HTML_OUT = join(DIST, "jack-chu-resume.html");
 const MD_OUT = join(DIST, "linkedin-copy.md");
 const PDF_OUT = join(DIST, "jack-chu-resume.pdf");
 
-const CHROME =
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const CHROME_CANDIDATES: Partial<Record<NodeJS.Platform, string[]>> = {
+  darwin: ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"],
+  linux: ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"],
+  win32: [
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+  ],
+};
+
+function onPath(name: string): string | undefined {
+  return (process.env.PATH ?? "")
+    .split(delimiter)
+    .map((dir) => join(dir, name))
+    .find((p) => existsSync(p));
+}
+
+function findChrome(): string {
+  const override = process.env.CHROME_PATH;
+  if (override) return override;
+  for (const c of CHROME_CANDIDATES[process.platform] ?? []) {
+    const found = isAbsolute(c) ? (existsSync(c) ? c : undefined) : onPath(c);
+    if (found) return found;
+  }
+  throw new Error(
+    "Chrome not found. Install Google Chrome or Chromium, or set CHROME_PATH " +
+      "to its executable. Use `npm run html` to skip the PDF.",
+  );
+}
+
 export const EXPECTED_PAGES = 3;
 export const PATHS = { dist: DIST, html: HTML_OUT, md: MD_OUT, pdf: PDF_OUT };
 
@@ -41,7 +68,7 @@ function pdfPageCount(path: string): number {
 
 function renderPdf(htmlPath: string, pdfPath: string): void {
   execFileSync(
-    CHROME,
+    findChrome(),
     [
       "--headless",
       "--disable-gpu",

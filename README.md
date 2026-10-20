@@ -228,7 +228,9 @@ right thing for a resume to state, and is what the $9M+ figure rests on.
 ## Requirements
 
 - Node 23.6 or newer, for native TypeScript execution
-- Google Chrome at `/Applications/Google Chrome.app`, used headless for the PDF
+- Google Chrome or Chromium, used headless for the PDF. Found at the standard
+  macOS/Windows install path or as `google-chrome`/`chromium` on `PATH`; set
+  `CHROME_PATH` to use another executable
 
 Types are checked by your editor, not by the build: Node strips them without
 checking. `validate.ts` covers the structural cases at runtime.
