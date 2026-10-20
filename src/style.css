@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-family: "Charter", "Georgia", serif;
   font-size: 9.4pt;
-  line-height: 1.42;
+  line-height: 1.36;
   orphans: 2;
   widows: 2;
   color: var(--body);
@@ -32,6 +32,8 @@ body {
 .sans {
   font-family: "Helvetica Neue", "Avenir Next", Helvetica, Arial, sans-serif;
 }
+
+.nw { white-space: nowrap; }
 
 /* ---------- masthead ---------- */
 
@@ -82,7 +84,7 @@ header { margin-bottom: 4pt; }
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 13pt 0 7pt;
+  margin: 11pt 0 6pt;
   padding-bottom: 2pt;
   border-bottom: 0.6pt solid var(--accent);
   break-after: avoid;
@@ -96,7 +98,7 @@ header { margin-bottom: 4pt; }
 
 /* ---------- experience ---------- */
 
-.job { margin-top: 11pt; }
+.job { margin-top: 9pt; }
 .section + .job { margin-top: 0; }
 
 .job-head {
@@ -154,7 +156,7 @@ header { margin-bottom: 4pt; }
   color: #8b959d;
 }
 
-.job-body { margin-top: 6pt; }
+.job-body { margin-top: 4pt; }
 .job-body p { margin: 0 0 5pt; }
 .job-body p:last-child { margin-bottom: 0; }
 
@@ -166,7 +168,7 @@ ul.pts {
 ul.pts li {
   position: relative;
   padding-left: 11pt;
-  margin-bottom: 4pt;
+  margin-bottom: 2.5pt;
 }
 ul.pts li:last-child { margin-bottom: 0; }
 ul.pts li::before {

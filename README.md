@@ -1,6 +1,6 @@
 # Resume generator
 
-Generates a 3-page PDF resume and paste-ready LinkedIn copy from one source.
+Generates a 2-page PDF resume and paste-ready LinkedIn copy from one source.
 
 Point a prompt at this file with the change you want:
 
@@ -12,7 +12,7 @@ State the fact that changed. Do not name a file. Facts live in one place, and
 the build works out where they surface.
 
 ```bash
-npm run build      # validate, write dist/, render the PDF, assert 3 pages
+npm run build      # validate, write dist/, render the PDF, assert 2 pages
 npm run preview    # live preview on localhost:4321, rebuilds as you edit
 npm run check      # validate only, writes nothing
 npm run html       # write dist/ but skip Chrome
@@ -80,9 +80,9 @@ written twice, and they are not the same sentence truncated:
 }
 ```
 
-Of 29 resume bullets, 2 are identical to their LinkedIn wording and 26 are
+Of 26 resume bullets, 1 is identical to its LinkedIn wording and 25 are
 rewritten. **A bullet with no `resume` key appears only on LinkedIn.** That is
-how the PDF stays at three pages while LinkedIn carries all 89 bullets.
+how the PDF stays at two pages while LinkedIn carries all 89 bullets.
 
 Changing a *fact* means changing both wordings. They sit adjacent so you cannot
 miss one.
@@ -111,7 +111,7 @@ miss one.
 - a LinkedIn headline over 220, About over 2,600, or a description over 2,000
 - `resumeOrder` set on some but not all resume bullets in a role
 - `resumeMode: "earlier"` without an `earlier` line
-- **a PDF that is not exactly 3 pages**
+- **a PDF that is not exactly 2 pages**
 
 It warns, without failing, on:
 

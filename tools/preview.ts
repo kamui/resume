@@ -7,7 +7,7 @@
  * Watches src/, rebuilds on save, and reloads the browser.
  *
  * It shows the rendered PDF rather than the HTML on purpose. This resume has
- * to fit on three pages, and an HTML preview in a browser is unpaginated, so
+ * to fit on two pages, and an HTML preview in a browser is unpaginated, so
  * it would hide the single constraint most likely to break. What you see here
  * is the same artifact that gets sent.
  *

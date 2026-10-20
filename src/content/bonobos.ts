@@ -24,15 +24,15 @@ export const bonobos: Job = {
         linkedinIntro: "Around $150M men's apparel brand, acquired by Walmart in 2017. Reported to the CEO. Led the Engineering team: 17 in-house engineers across 2 product engineering teams and a 3-person Site Reliability team handling bug triage and tech debt, plus 2 offshore QA engineers.",
         bullets: [
           {
-            resume: "Led the engineering side of the Walmart migration: compliance and security work, run books for breaches, and the infrastructure move",
-            linkedin: "Led the engineering side of the Walmart migration, which included compliance and security work, documentation and run books for security and data breaches, and the infrastructure migration and support",
+            resume: "Led engineering for the post-acquisition Walmart integration: security, compliance, breach run books, infrastructure",
+            linkedin: "Led the engineering side of the post-acquisition Walmart integration, which included compliance and security work, documentation and run books for security and data breaches, and the infrastructure migration and support",
           },
           {
             resume: "Completed PCI Level 1 compliance on the engineering side of the DSS with an external auditor",
             linkedin: "Completed PCI Level 1 compliance on the engineering side of the DSS with an external auditor",
           },
           {
-            resume: "Built a merchandising admin to manage, surface and schedule hundreds of SKUs across category pages, and put site search on Elasticsearch",
+            resume: "Built a merchandising admin to schedule hundreds of SKUs across category pages, and put site search on Elasticsearch",
             linkedin: "Built a backend administrative tool so Merchandising could manage, surface and schedule the availability of hundreds of SKUs across our category pages",
           },
           {
@@ -85,18 +85,16 @@ export const bonobos: Job = {
             linkedin: "Improved site performance and SEO by re-architecting our frontend app on Node.js with hybrid client- and server-side rendering, using Next.js, React, Redux, PostCSS/cssnext and CSS Modules. We built an HTTP caching layer into the app for speed and resiliency when the API layer was slow or down",
           },
           {
-            resume: "Cut load times 30-40% with lazy loading below the fold, image compression and format negotiation by browser, and viewport-aware sizing",
+            resume: "Cut load times 30-40% with lazy loading, image compression, format negotiation by browser, and viewport-aware sizing",
             linkedin: "Cut load times by 30 to 40% with lazy loading below the fold, image compression and format negotiation by browser, and image dimensions optimized by viewport and device type",
           },
           {
             linkedin: "Improved SEO through structured data, fixing canonical URLs, improving page speed, cleaning our sitemap, rendering sold-out product pages rather than 404ing them, and fixing heading structure",
           },
           {
-            resume: "Completed site-wide ADA AA compliance and taught the other teams how to hold it",
             linkedin: "Completed site-wide ADA AA compliance and socialized how to maintain it across the other teams",
           },
           {
-            resume: "Built the size, fit and option education experience, with a backend admin that previewed it live",
             linkedin: "Built the size, fit and option education experience to help customers pick the right options, including a new backend admin with live previews. All in React and Redux",
           },
           {
@@ -121,15 +119,13 @@ export const bonobos: Job = {
         linkedinIntro: "",
         bullets: [
           {
-            resume: "Replaced the single-page JavaScript storefront with a hybrid client/server-rendered Rails 4 app, targeting response times and Speed Index",
+            resume: "Replaced the single-page JavaScript storefront with a server-rendered Rails 4 app for faster response times",
             linkedin: "Architected and implemented a replacement for the user-facing single-page JavaScript app with a hybrid client/server-rendered Rails 4 app, focused on response times and Speed Index",
           },
           {
-            resume: "Built a Node/webpack/Babel asset pipeline to replace Sprockets, whose dependency management was too primitive and upfront; npm access was a big bonus on top of that",
             linkedin: "Created an asset pipeline on Node, webpack, Babel, ES6 and Immutable.js to replace Rails' built-in pipeline. Sprockets' dependency management was too primitive and upfront, and easier access to npm packages was a big bonus",
           },
           {
-            resume: "Rewrote checkout in Nuclear.js and React, off Backbone, and moved EC2, Redis ElastiCache and the app structure to Heroku",
             linkedin: "Rewrote our checkout flow in Nuclear.js and React, moving off Backbone.js",
           },
           {

@@ -28,22 +28,22 @@ export const fete: Job = {
         ],
         bullets: [
           {
-            resume: "Built an AI gifting recommendation product. Not a chatbot, but a wizard that collects your budget, who's giving, who's receiving, and the relationship between them, then returns products from across the internet with the reasoning, ideas for how to present the gift, and a draft gift note. Ran it through an LLM gateway so we could swap prompts and models as we tested",
+            resume: "Built an AI gift recommendation product behind an LLM gateway. Not a chatbot, but a guided flow: budget, giver, recipient and relationship in; products from across the web, the reasoning, and a draft gift note out",
             linkedin: "Built an AI gifting recommendation product. Not a chatbot, but a wizard that collects your budget, who's giving, who's receiving, and the relationship between them, then returns products from across the internet with the reasoning, ideas for how to present the gift, and a draft gift note. Ran it through an LLM gateway so we could swap prompts and models as we tested",
           },
           {
-            resume: "Built a custom headless Shopify stack: React/TanStack/Mantine front end, Nest.js with Sanity, Drizzle, Postgres and Redis behind it, multiplexing Shopify and CMS data. Most of it written with Claude Opus and GPT-5 through OpenCode/OpenChamber",
-            linkedin: "Built a custom headless Shopify stack: React, TanStack Start, and Mantine on the front end, with Nest.js, the Sanity CMS API, Drizzle ORM, Postgres and Redis behind it, multiplexing Shopify and CMS data through to the front end. Most of it written with Claude Opus and GPT-5 through the OpenCode/OpenChamber harness",
+            resume: "Ran the build AI-first: a custom headless Shopify stack in TypeScript and Node.js (React, TanStack Start, Mantine, Nest.js, Sanity, Drizzle, Postgres, Redis), most of it written with Claude Opus and GPT-5 agents through OpenCode",
+            linkedin: "Built a custom headless Shopify stack in TypeScript and Node.js: React, TanStack Start, and Mantine on the front end, with Nest.js, the Sanity CMS API, Drizzle ORM, Postgres and Redis behind it, multiplexing Shopify and CMS data through to the front end. Most of it written with Claude Opus and GPT-5 through the OpenCode/OpenChamber harness",
           },
           {
-            resume: "Set architecture and roadmaps across three business models as the company moved from B2B gifting to B2C gifting to a tech-forward e-commerce magazine",
+            resume: "Set architecture and roadmaps through three business models: B2B gifting, B2C gifting, then an e-commerce magazine",
             linkedin: "Set technology architecture requirements and roadmaps across three different business models as the company moved from B2B gifting to B2C gifting to a tech-forward e-commerce magazine",
           },
           {
             linkedin: "Hired the team: a VP of Product, a product design lead on contract, and a small group of offshore engineers to build the various product directions",
           },
           {
-            resume: "Hired the product, design, and engineering group. Sourced a Manhattan MSP to take over the IT setup I'd stood up, and trained an associate to run the day-to-day",
+            resume: "Hired the product, design and engineering group, and handed the IT setup I'd stood up to a managed service provider",
             linkedin: "Sourced a Managed Service Provider in Manhattan to take over the IT setup I had stood up, and mentored an associate employee into running the day-to-day IT work",
           },
         ],

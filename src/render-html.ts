@@ -23,9 +23,15 @@ function esc(s: string): string {
     .replace(/>/g, "&gt;");
 }
 
-/** Escape, then turn **bold** into <b>. */
+/**
+ * Escape, then turn **bold** into <b>. Hyphenated words are kept on one line:
+ * text extraction drops a line-end hyphen, so "e-commerce" split across lines
+ * reaches a parser as "ecommerce".
+ */
 function inline(s: string): string {
-  return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+  return esc(s)
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+    .replace(/[^\s<>]+-[^\s<>]+/g, '<span class="nw">$&</span>');
 }
 
 /** Resume-visible bullets, in resume order. */
