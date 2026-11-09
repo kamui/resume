@@ -53,10 +53,16 @@ header { margin-bottom: 4pt; }
   font-size: 10.2pt;
   color: var(--accent);
   margin: 0 0 7pt;
+  white-space: nowrap;
 }
 .headline .sep {
   color: #9fb0ba;
   margin: 0 6pt;
+  white-space: normal;
+}
+/* The segments are joined with no spaces, so this zero-width space is the only place the header can wrap. */
+.headline .sep::after {
+  content: "\200B";
 }
 
 .contact {

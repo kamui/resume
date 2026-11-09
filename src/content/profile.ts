@@ -10,7 +10,7 @@ export const profile = {
   name: "Jack Chu",
   headline: [
     "CTO / VP Engineering / Head of Engineering",
-    "Build 0-1 products, modernize platforms, grow teams from 3 to 30+",
+    "Build and scale engineering teams, from 0-1 through 30+",
     "Health, e-commerce, retail",
   ],
   location: "Brooklyn, NY",
