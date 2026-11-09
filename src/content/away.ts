@@ -32,7 +32,7 @@ export const away: Job = {
             linkedin: "Launched the company's first experimentation and A/B testing program. 20 to 30 tests over the period, worth single-digit millions in incremental revenue, driving funnel engagement, add-to-cart, checkout conversion and AOV",
           },
           {
-            resume: "Hired and organized Product Engineering, SRE, Data, IT and DTC Technology teams; grew Product and E-commerce",
+            resume: "Organized engineering into Product Engineering, SRE, Data, IT and DTC Technology teams; grew Product and E-commerce",
           },
           {
             resume: "Built the data platform end to end: payments, supply chain, marketing, site and POS data into a warehouse, with BI",
