@@ -14,12 +14,7 @@ export const bigFuel: Job = {
           range: "March 2011 - June 2012",
           location: "New York, NY",
         },
-        resumeMode: "earlier",
-        earlier: {
-          years: "2011 - 2012",
-          company: "Big Fuel Communications",
-          title: "Software Engineer",
-        },
+        resumeMode: "omit",
         linkedinIntro: "Created a Social Media Management System for building and deploying Facebook pages and tabs, in Ruby on Rails and MongoDB. The platform was a single Rails application containing reusable components: surveys, polls, signups, image submissions, image galleries and asset downloads.",
         linkedinNotes: [
           "Facebook tabs could be built quickly from the available components, which were then managed through an admin console. Each tab was essentially a single git repository. Pages were written in any language supported by Tilt (Haml, Sass, CoffeeScript, Slim), and assets used the Rails asset pipeline with Sprockets.",

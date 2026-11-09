@@ -38,19 +38,12 @@ export const profile = {
     "What I am good at: going from nothing to a working product with a small team, then building the org that keeps shipping it. Hiring. Architecture decisions that survive contact with a roadmap change. Getting technology costs under control without stalling delivery. Staying close enough to the code to know whether an estimate is real.",
   ],
   earlierLede:
-    "Software engineer and tech lead across e-commerce, publishing and social platforms. Detail on LinkedIn.",
+    "Software engineer and tech lead across e-commerce and social platforms. Details on LinkedIn.",
   education: [
     {
       school: "City University of New York-Baruch College",
       division: "Zicklin School of Business",
       degree: "BBA, Computer Information Systems",
-      years: "2004 - 2007",
-    },
-    {
-      school: "New York University",
-      division: "Polytechnic School of Engineering",
-      degree: "Computer Science",
-      years: "1997 - 1999",
     },
   ],
 }

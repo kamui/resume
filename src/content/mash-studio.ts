@@ -14,12 +14,7 @@ export const mashStudio: Job = {
           range: "January 2014 - August 2014",
           location: "New York",
         },
-        resumeMode: "earlier",
-        earlier: {
-          years: "2014",
-          company: "Mash+Studio",
-          title: "Senior Developer",
-        },
+        resumeMode: "omit",
         linkedinIntro: "Continued supporting the CropUp product, and built a Rails app for Canadian Ford dealerships to manage charity and community test drive events.",
         linkedinNotes: [
           "On CropUp:",

@@ -46,26 +46,14 @@ export type Timeframe = {
 /**
  * How a role appears in the PDF.
  *  - "full"    : full entry with scope block and bullets
- *  - "earlier" : one line in the collapsed Earlier block
  *  - "omit"    : LinkedIn only
  */
-export type ResumeMode = "full" | "earlier" | "omit";
-
-/** The one-line form used in the resume's Earlier block. */
-export type EarlierLine = {
-  /** Short year label, e.g. "2012 - 2013" rather than "June 2012 - March 2013". */
-  years: string;
-  /** Short company name, e.g. "Big Fuel Communications" without the "LLC". */
-  company: string;
-  title: string;
-};
+export type ResumeMode = "full" | "omit";
 
 export type Role = {
   title: string;
   time: Timeframe;
   resumeMode: ResumeMode;
-  /** Required when resumeMode is "earlier". */
-  earlier?: EarlierLine;
 
   /**
    * Scope lines for the resume, rendered stacked inside the ruled block.
@@ -103,8 +91,6 @@ export type Education = {
   /** Faculty or school within the institution, e.g. "Zicklin School of Business". */
   division?: string;
   degree: string;
-  /** e.g. "2004 - 2007". The resume parenthesises it, LinkedIn does not. */
-  years: string;
 };
 
 export type Contact = {
@@ -127,7 +113,7 @@ export type Resume = {
 
   jobs: Job[];
 
-  /** Lede paragraph above the Earlier block on the resume. */
+  /** Single-line summary of earlier experience on the resume. */
   earlierLede: string;
 
   education: Education[];

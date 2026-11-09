@@ -13,12 +13,7 @@ export const centralParkMedia: Job = {
         time: {
           range: "2000 - 2006",
         },
-        resumeMode: "earlier",
-        earlier: {
-          years: "2000 - 2006",
-          company: "Central Park Media",
-          title: "Web Developer",
-        },
+        resumeMode: "omit",
         linkedinIntro: "Development and maintenance of e-commerce web apps, CMS web apps and marketing websites for Japanese animation and Asian cult video products.",
         bullets: [
           {

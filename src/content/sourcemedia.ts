@@ -13,12 +13,7 @@ export const sourcemedia: Job = {
         time: {
           range: "June 2006 - January 2009",
         },
-        resumeMode: "earlier",
-        earlier: {
-          years: "2006 - 2009",
-          company: "SourceMedia",
-          title: "Software Engineer",
-        },
+        resumeMode: "omit",
         linkedinIntro: "Development of content management systems used across multiple financial publications, plus maintenance and development of around 20 legacy content sites.",
         bullets: [
           {

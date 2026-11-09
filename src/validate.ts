@@ -93,8 +93,6 @@ export function validate(r: Resume): Problem[] {
       if (ordered.length && ordered.length !== visible.length)
         err(at, `resumeOrder set on ${ordered.length} of ${visible.length} resume bullets; set all or none`);
 
-      if (role.resumeMode === "earlier" && !role.earlier)
-        err(at, 'resumeMode "earlier" requires an earlier line');
       if (role.resumeMode === "full" && resumeBullets(role).length === 0)
         warn(at, "shown on the resume but has no resume bullets");
     }

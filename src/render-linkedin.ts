@@ -107,7 +107,7 @@ export function renderLinkedin(r: Resume): string {
   push("# Education", "");
   for (const e of r.education) {
     const school = e.division ? `${e.school}, ${e.division}` : e.school;
-    push(`**${school}**`, `${e.degree} · ${e.years}`, "");
+    push(`**${school}**`, e.degree, "");
   }
   push("---", "");
 

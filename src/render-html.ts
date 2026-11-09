@@ -119,30 +119,13 @@ function sectionRule(label: string): string {
   return `<h2 class="section sans">${esc(label)}</h2>`;
 }
 
-function earlierBlock(r: Resume): string {
-  const rows = r.jobs
-    .flatMap((j) => j.roles.filter((role) => role.resumeMode === "earlier"))
-    .map((role) => role.earlier!)
-    .map(
-      (e) =>
-        `  <div class="early-row"><span class="co">${esc(e.company)}</span><span class="ti">${esc(e.title)}</span><span class="yrs sans">${esc(e.years)}</span></div>`,
-    )
-    .join("\n");
-
-  return `<div class="early">
-  <p class="lede">${inline(r.earlierLede)}</p>
-
-${rows}
-</div>`;
-}
-
 function educationBlock(entries: Education[]): string {
   const items = entries
     .map((e) => {
       const school = e.division ? `${e.school} - ${e.division}` : e.school;
       return `  <div class="edu">
     <div class="school">${esc(school)}</div>
-    <div class="degree">${esc(e.degree)} · (${esc(e.years)})</div>
+    <div class="degree">${esc(e.degree)}</div>
   </div>`;
     })
     .join("\n");
@@ -209,7 +192,7 @@ ${jobs}
 
 ${sectionRule("Earlier")}
 
-${earlierBlock(r)}
+<p class="early">${inline(r.earlierLede)}</p>
 
 ${sectionRule("Education")}
 

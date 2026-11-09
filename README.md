@@ -98,7 +98,8 @@ miss one.
 | `note` | italic footnote on the PDF, e.g. why a role ended |
 | `linkedinIntro` | opening paragraph carrying reporting line, team size, budget |
 | `linkedinNotes` / `linkedinOutro` | paragraphs before the first bullet / after the last |
-| `resumeMode` | `full`, `earlier` (one line in the Earlier block), or `omit` |
+| `resumeMode` | `full` (individual resume entry) or `omit` (LinkedIn only) |
+| `earlierLede` | single undated line summarizing earlier experience on the resume |
 
 ---
 
@@ -110,7 +111,6 @@ miss one.
 - a bullet ending in a period, except one ending `etc.`
 - a LinkedIn headline over 220, About over 2,600, or a description over 2,000
 - `resumeOrder` set on some but not all resume bullets in a role
-- `resumeMode: "earlier"` without an `earlier` line
 - **a PDF that is not exactly 2 pages**
 
 It warns, without failing, on:

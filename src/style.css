@@ -191,14 +191,7 @@ ul.pts li b {
 
 /* ---------- earlier experience ---------- */
 
-.early { break-inside: avoid; page-break-inside: avoid; }
-.early .lede { margin: 0 0 5pt; }
-.early-row { margin-bottom: 1pt; }
-.early-row .co { font-weight: 700; color: var(--ink); }
-.early-row .ti { color: var(--body); }
-.early-row .ti::before,
-.early-row .yrs::before { content: "·"; color: var(--muted); margin: 0 6pt; }
-.early-row .yrs { font-size: 7.8pt; color: var(--muted); }
+.early { margin: 0; break-inside: avoid; page-break-inside: avoid; }
 
 /* ---------- education ---------- */
 

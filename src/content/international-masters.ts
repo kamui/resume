@@ -13,12 +13,7 @@ export const internationalMasters: Job = {
         time: {
           range: "January 2009 - October 2009",
         },
-        resumeMode: "earlier",
-        earlier: {
-          years: "2009",
-          company: "International Masters Publishers",
-          title: "Software Engineer",
-        },
+        resumeMode: "omit",
         linkedinIntro: "Development of a photo book, card and print e-commerce web application (hoorray.com) and a cooking recipe web application (cookingvillage.com).",
         bullets: [
           {
