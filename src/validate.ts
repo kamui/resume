@@ -81,7 +81,9 @@ export function validate(r: Resume): Problem[] {
       for (const b of role.bullets) {
         walk(`${at} bullet`, b.resume);
         walk(`${at} bullet`, b.linkedin);
-        if (endsBadly(b.linkedin))
+        if (b.resume === undefined && b.linkedin === undefined)
+          err(at, "bullet has neither resume nor LinkedIn wording");
+        if (b.linkedin && endsBadly(b.linkedin))
           err(at, `LinkedIn bullet ends with a period: "...${b.linkedin.slice(-45)}"`);
         if (b.resume && endsBadly(b.resume))
           err(at, `resume bullet ends with a period: "...${b.resume.slice(-45)}"`);

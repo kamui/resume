@@ -15,8 +15,8 @@
 export type Bullet = {
   /** Compressed wording for the PDF. Omit to keep this bullet off the resume. */
   resume?: string;
-  /** Full wording for LinkedIn. Always required; LinkedIn carries everything. */
-  linkedin: string;
+  /** Full wording for LinkedIn. Omit to keep this bullet off LinkedIn. */
+  linkedin?: string;
   /**
    * Position within the resume, when it differs from the LinkedIn order.
    *

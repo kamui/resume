@@ -81,7 +81,8 @@ written twice, and they are not the same sentence truncated:
 ```
 
 Of 26 resume bullets, 1 is identical to its LinkedIn wording and 25 are
-rewritten. **A bullet with no `resume` key appears only on LinkedIn.** That is
+rewritten. **A bullet with no `resume` key appears only on LinkedIn**, and one with no
+`linkedin` key appears only on the resume. That is
 how the PDF stays at two pages while LinkedIn carries all 89 bullets.
 
 Changing a *fact* means changing both wordings. They sit adjacent so you cannot

@@ -28,6 +28,7 @@ export function descriptionText(role: Role): string {
     ...(role.linkedinNotes ?? []).map(plain),
   ];
   for (const b of role.bullets) {
+    if (b.linkedin === undefined) continue;
     if (b.heading) parts.push(plain(b.heading));
     parts.push(`• ${plain(b.linkedin)}`);
   }
