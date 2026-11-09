@@ -19,17 +19,21 @@ export const fete: Job = {
         resumeMode: "full",
         scope: [
           "Reported to the CEO, later the President · Executive leadership team",
-          "**Team of 6**: in-house VP of Product, consultant design lead, offshore product/project manager, 3 offshore engineers",
+          "**Team of 6**: in-house VP of Product, consultant design lead, offshore product/project manager, 3 engineers in Argentina on US Eastern hours",
         ],
         note: "Role ended when the company pivoted from building custom product to an off-the-shelf e-commerce platform",
-        linkedinIntro: "Reported to the CEO, later the President. On the executive leadership team. Team of 6: an in-house VP of Product, a product design lead on contract, an offshore product and project manager, and 3 offshore engineers.",
+        linkedinIntro: "Reported to the CEO, later the President. On the executive leadership team. Team of 6: an in-house VP of Product, a product design lead on contract, an offshore product and project manager, and 3 engineers in Argentina on US Eastern hours.",
         linkedinNotes: [
           "The role ended when the company pivoted away from building a custom digital product and moved to an off-the-shelf e-commerce platform.",
         ],
         bullets: [
           {
-            resume: "Built an AI gift recommendation product behind an LLM gateway. Not a chatbot, but a guided flow: budget, giver, recipient and relationship in; products from across the web, the reasoning, and a draft gift note out",
-            linkedin: "Built an AI gifting recommendation product. Not a chatbot, but a wizard that collects your budget, who's giving, who's receiving, and the relationship between them, then returns products from across the internet with the reasoning, ideas for how to present the gift, and a draft gift note. Ran it through an LLM gateway so we could swap prompts and models as we tested",
+            resume: "Built an AI gift recommendation product behind an LLM gateway. Not a chatbot, but a guided flow: budget, giver, recipient and relationship in; products from across the web, the reasoning, and a draft gift note out. Built in 6–8 weeks; shelved before launch when the company changed direction",
+            linkedin: "Built an AI gifting recommendation product. Not a chatbot, but a wizard that collects your budget, who's giving, who's receiving, and the relationship between them, then returns products from across the internet with the reasoning, ideas for how to present the gift, and a draft gift note. Ran it through an LLM gateway so we could swap prompts and models as we tested. Built in 6–8 weeks; shelved before launch when the company changed direction",
+          },
+          {
+            resume: "Ran a modified-scrum process across the distributed team: Jira, daily standups (some async in Slack), sprint planning, story pointing, retros, mandatory code review, CI/CD, and required specs and test coverage",
+            linkedin: "Ran a modified-scrum process across the distributed team: Jira, daily standups (some async in Slack), sprint planning, story pointing, retros, mandatory code review, CI/CD, and required specs and test coverage",
           },
           {
             resume: "Ran the build AI-first: a custom headless Shopify stack in TypeScript and Node.js (React, TanStack Start, Mantine, Nest.js, Sanity, Drizzle, Postgres, Redis), most of it written with Claude Opus and GPT-5 agents through OpenCode",
