@@ -24,12 +24,15 @@ export const away: Job = {
         linkedinIntro: "DTC luggage brand, around 170 people. Reported to the CEO, two of them across the period, and sat on the leadership team. Inherited 3 consultant engineers plus the e-commerce, project management and product management teams, then built the org past 30 by adding engineering, data, retail technology and ERP. A $9M+ annual budget across comp, software and services.",
         bullets: [
           {
+            resume: "Hired five of six managers and directors reporting to me (product engineering, data engineering, e-commerce, product management, retail tech, supply chain tech) while growing the org from 3 consultants to 30+",
+            linkedin: "Hired five of six managers and directors reporting to me (product engineering, data engineering, e-commerce, product management, retail tech, supply chain tech) while growing the org from 3 consultants to 30+",
+          },
+          {
             resume: "Started the company's first experimentation program. 20-30 tests over the period, worth single-digit millions in incremental revenue across funnel engagement, add-to-cart, checkout conversion, and AOV",
             linkedin: "Launched the company's first experimentation and A/B testing program. 20 to 30 tests over the period, worth single-digit millions in incremental revenue, driving funnel engagement, add-to-cart, checkout conversion and AOV",
           },
           {
             resume: "Hired and organized Product Engineering, SRE, Data, IT and DTC Technology teams; grew Product and E-commerce",
-            linkedin: "Built the engineering organization, recruiting and scaling Product Engineering, Site Reliability Engineering, Data Engineering, IT and Direct-to-Consumer Technology while developing our Product Management and E-commerce functions",
           },
           {
             resume: "Built the data platform end to end: payments, supply chain, marketing, site and POS data into a warehouse, with BI",
