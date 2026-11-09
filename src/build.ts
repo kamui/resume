@@ -82,7 +82,7 @@ function findChrome(): string {
   );
 }
 
-export const EXPECTED_PAGES = 2;
+export const EXPECTED_PAGES = 3;
 
 /** Page count straight from the PDF's page tree. */
 function pdfPageCount(path: string): number {
